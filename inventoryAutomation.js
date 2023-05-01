@@ -12,12 +12,12 @@
       var isSale = orderType === "Sale";
       // Check if the record is being moved from "In Progress" to "Completed"
       if (
-        event.nextStatus.value === "Complete" &&
+        event.nextStatus.value === "Completed" &&
         event.status.value === "In Progress"
       ) {
         kintone
           .api(kintone.api.url("/k/v1/records", true), "GET", {
-            app: 25,
+            app: 6,
             query: 'item_code="' + itemCode + '"',
           })
           .then(function (resp) {
@@ -30,7 +30,7 @@
                 var newStock = stock - orderQuantity;
                 kintone
                   .api(kintone.api.url("/k/v1/record", true), "PUT", {
-                    app: 25,
+                    app: 6,
                     id: itemRecord["$id"].value,
                     record: {
                       stock: { value: newStock },
@@ -46,7 +46,7 @@
                 var newPurchaseStock = stock + orderQuantity;
                 kintone
                   .api(kintone.api.url("/k/v1/record", true), "PUT", {
-                    app: 25,
+                    app: 6,
                     id: itemRecord["$id"].value,
                     record: {
                       stock: { value: newPurchaseStock },
