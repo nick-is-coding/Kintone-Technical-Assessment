@@ -4,8 +4,8 @@ This repository contains custom JavaScript code for automating inventory managem
 
 ## File Descriptions
 
-- lowstock.js - custom JavaScript for Item Master App
-- inventoryAutomation.js - custom JavaScript for Orders App
+- lowstock.js - custom JavaScript for Item Master App to change stock color upon stock levels
+- inventoryAutomation.js - custom JavaScript for Orders App to automate stock changes depending on status
 
 ## Pre-requisites
 
